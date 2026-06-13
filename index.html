@@ -206,55 +206,93 @@
         </section>
 
         <section id="temoignages" class="py-5 bg-white">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="fw-bold">Ce que disent nos utilisateurs</h2>
-                    <p class="text-muted">Découvrez les retours d'expérience de notre communauté</p>
+            <div class="container text-center mb-5">
+                <h2 class="fw-bold">Ce que disent nos utilisateurs</h2>
+                <p class="text-muted">Découvrez les retours d'expérience de notre communauté</p>
+            </div>
+
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                <!-- INDICATEURS -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm bg-light p-3">
-                            <div class="card-body text-center">
+
+                <!-- CONTENU -->
+                <div class="carousel-inner">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="card border-0 shadow-sm bg-light p-4" style="max-width: 600px;">
                                 <img src="https://images.pexels.com/photos/33558722/pexels-photo-33558722.jpeg"
-                                    class="rounded-circle mb-3" alt="Aminata Diallo"
-                                    style="width: 80px; height: 80px; object-fit: cover;">
-                                <h5 class="fw-bold mb-0">Aminata Diallo</h5>
+                                    class="rounded-circle mx-auto mb-3"
+                                    style="width: 90px; height: 90px; object-fit: cover;" alt="Aminata Diallo">
+
+                                <h5 class="fw-bold">Aminata Diallo</h5>
                                 <p class="text-primary small mb-2">Directrice Marketing — Dakar</p>
-                                <p class="text-muted small">"AfriTalent m'a permis de trouver un développeur et un
-                                    référenceur compétents en moins de 48 heures. Le suivi est parfait."</p>
+                                <p class="text-muted">
+                                    "AfriTalent m'a permis de trouver des freelances compétents en moins de 48 heures.
+                                    Une plateforme fiable et rapide."
+                                </p>
                                 <div class="text-warning">★★★★★</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm bg-light p-3">
-                            <div class="card-body text-center">
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="card border-0 shadow-sm bg-light p-4" style="max-width: 600px;">
                                 <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
-                                    class="rounded-circle mb-3" alt="Marc Dubois"
-                                    style="width: 80px; height: 80px; object-fit: cover;">
-                                <h5 class="fw-bold mb-0">Marc Dubois</h5>
-                                <p class="text-primary small mb-2">Fondateur de TechStart — Paris</p>
-                                <p class="text-muted small">"La qualité technique des experts Cloud trouvés sur cette
-                                    plateforme dépasse nos espérances. Je recommande vivement."</p>
+                                    class="rounded-circle mx-auto mb-3"
+                                    style="width: 90px; height: 90px; object-fit: cover;" alt="Marc Dubois">
+
+                                <h5 class="fw-bold">Marc Dubois</h5>
+                                <p class="text-primary small mb-2">Fondateur — TechStart Paris</p>
+                                <p class="text-muted">
+                                    "La qualité des experts trouvés sur AfriTalent dépasse largement nos attentes.
+                                    Je recommande fortement."
+                                </p>
                                 <div class="text-warning">★★★★★</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm bg-light p-3">
-                            <div class="card-body text-center">
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="card border-0 shadow-sm bg-light p-4" style="max-width: 600px;">
                                 <img src="https://images.pexels.com/photos/12684126/pexels-photo-12684126.png"
-                                    class="rounded-circle mb-3" alt="Awa Dernevile"
-                                    style="width: 80px; height: 80px; object-fit: cover;">
-                                <h5 class="fw-bold mb-0">Awa Derneville</h5>
+                                    class="rounded-circle mx-auto mb-3"
+                                    style="width: 90px; height: 90px; object-fit: cover;" alt="Awa Derneville">
+
+                                <h5 class="fw-bold">Awa Derneville</h5>
                                 <p class="text-primary small mb-2">Designer Freelance — Saint-Louis</p>
-                                <p class="text-muted small">"Grâce à AfriTalent, j'ai décroché mes premiers contrats
-                                    internationaux tout en restant basée au Sénégal. Une vraie révolution."</p>
+                                <p class="text-muted">
+                                    "Grâce à AfriTalent, j'ai trouvé mes premiers clients internationaux.
+                                    Une vraie opportunité pour les freelances africains."
+                                </p>
                                 <div class="text-warning">★★★★☆</div>
                             </div>
                         </div>
                     </div>
+
                 </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
             </div>
         </section>
 

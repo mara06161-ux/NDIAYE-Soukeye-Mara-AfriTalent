@@ -197,3 +197,53 @@ a {
     text-align: center;
     padding-bottom: 25px;
 }
+
+@media (min-width: 1200px) {
+    #hero h1 {
+        font-size: 4.5rem;
+    }
+
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 3. AJUSTEMENTS SPÉCIFIQUES POUR MOBILE (Moins de 768px) */
+@media (max-width: 767px) {
+    #hero {
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    #hero .container {
+        margin-left: auto;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        border-left: none;
+        /* On enlève la barre latérale qui prend trop de place */
+        border-top: 3px solid #ff6b6b;
+        /* On la met en haut pour le style */
+        padding-left: 0;
+        padding-top: 15px;
+    }
+
+    /* Le Bento devient une liste simple sur mobile */
+    .bento-grid {
+        grid-template-columns: 1fr;
+        /* 1 seule colonne */
+        grid-auto-rows: auto;
+    }
+
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4 {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+}
