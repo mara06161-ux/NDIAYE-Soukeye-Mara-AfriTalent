@@ -83,3 +83,117 @@ a {
     color: var(--couleur-secondaire) !important;
 
 }
+
+/*section hero*/
+/*commit 4*/
+#hero p {
+    font-size: 1.2rem;
+    color: #555;
+    border-left: 5px solid #ff6b6b;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+#hero .btn-primary {
+    padding: 15px 40px;
+    font-weight: bold;
+    border-radius: 0;
+    background-color: #1a1a1a;
+    border: none;
+    transition: 0.3s;
+}
+
+#hero .btn-primary:hover {
+    background-color: #ff6b6b;
+    transform: translateX(10px);
+}
+
+/* On active la grille */
+.bento-grid {
+    display: grid;
+    /* 3 colonnes égales */
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 160px;
+    gap: 20px;
+}
+
+/*proprietés communs */
+.bento-item {
+    background-color: #ffffff;
+    border: 2px solid #1a1a1a;
+    padding: 25px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+/*  survol blocs du Bento */
+.bento-item:hover {
+    /* déplace  vers le haut */
+    transform: translateY(-10px);
+
+    /*  ombre effet de profondeur */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-color: #ff6b6b;
+    cursor: pointer;
+    /* Le curseur en main */
+}
+
+.item-1 {
+    /* Ce bloc prend 2 colonnes et 2 lignes */
+    grid-column: span 2;
+    grid-row: span 2;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.item-2 {
+    /*  1 colonne et 1 ligne */
+    grid-column: span 1;
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.item-3 {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.item-4 {
+    grid-column: span 2;
+    border-style: dashed;
+}
+
+#services .col-md-4 {
+    padding: 30px;
+    border: 1px solid transparent;
+    background-color: #ffffff;
+    border-radius: 15px;
+
+    transition: all 0.4s ease-in-out;
+}
+
+#services .col-md-4:hover {
+    /* soulève carte et agrandit */
+    transform: translateY(-10px) scale(1.02);
+
+    /* ombre  */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #ff6b6b;
+    cursor: pointer;
+}
+
+#services h3 {
+    color: #1a1a1a;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#services p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.container h2 {
+    text-align: center;
+    padding-bottom: 25px;
+}
