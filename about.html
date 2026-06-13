@@ -4,14 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À propos de nous </title>
+    <title>AfriTalent — À propos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Afri<span class="talent">Talent</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">A propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <main class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <h1 class="fw-bold mb-4">L'histoire d'AfriTalent</h1>
+                <p class="lead">Connecter le génie africain aux opportunités mondiales.</p>
+                <p>AfriTalent est né d'une volonté de valoriser les compétences techniques et créatives du continent.
+                    Nous avons créé cet espace pour que chaque développeur, designer ou marketeur africain puisse
+                    collaborer sur des projets internationaux d'envergure.</p>
+
+                <h3 class="mt-4">Notre Mission</h3>
+                <p>Réduire les barrières à l'entrée du marché du travail numérique et garantir un environnement de
+                    confiance pour les clients et les freelances.</p>
+
+                <div class="mt-4">
+                    <span class="badge bg-primary p-2">Excellence</span>
+                    <span class="badge bg-dark p-2">Intégrité</span>
+                    <span class="badge bg-primary p-2">Innovation</span>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 mt-4 mt-md-0">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600"
+                    class="img-fluid rounded shadow-lg" alt="L'équipe AfriTalent">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container py-4">
+            <p>&copy; 2025 AfriTalent. Tous droits reserves.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
