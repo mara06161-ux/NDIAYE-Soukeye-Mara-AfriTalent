@@ -1,6 +1,8 @@
+/*import  des police Google fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
 
-/*cherche sur les serveurs de G les fichiers des polices demandées*/
+/* Variables globales du projet (couleurs + polices) */
+
 :root {
     --couleur-primaire: #2c3e50;
     /*couleur bleu de nuit pour les titres,boutons importants*/
@@ -17,16 +19,27 @@
     --police-titre: 'Montserrat', sans-serif;
 }
 
+/* Style global de la page */
+
 body {
     font-family: var(--police-texte);
     color: var(--couleur-texte);
     background-color: var(--fond-clair);
     line-height: 1.6;
+    padding-top: 70px;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Logo "Talent" mis en couleur */
 
 .talent {
     color: #ff6b6b;
 }
+
+/* Titres avec police principale */
 
 h1,
 h2,
@@ -37,6 +50,8 @@ h6 {
     font-family: var(--police-titre);
 }
 
+/* Reset de base pour uniformiser les styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -45,25 +60,29 @@ h6 {
 
 }
 
+/* Suppression des puces des listes */
 ul {
     list-style: none;
 
 }
+
+/* Liens sans soulignement par défaut */
 
 a {
     text-decoration: none;
     color: inherit;
 }
 
+/* ===== NAVBAR ===== */
+
 .navbar {
     background-color: white !important;
-    /*applique notre couleur en priorité au lieu du couleur par défaut des classes bootstrap*/
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    /* ombre sous navbar */
-    /*décalage horizontal, décalage vertical, flou de l'ombre*/
-    padding: 1rem 0;
-    /*espace interne 1rem haut et bas de la navbar 0 à gauche et droite*/
+    padding: 20px 40px;
+    transition: all 0.3s ease;
 }
+
+/* Nom de la marque */
 
 .navbar-brand {
     font-family: var(--police-titre);
@@ -73,19 +92,24 @@ a {
     letter-spacing: -0.5px;
 }
 
+/* Liens du menu */
 .nav-link {
     font-weight: 500;
     color: var(--couleur-primaire) !important;
     transition: color 0.3s ease;
 }
 
+/* Effet hover sur les liens */
 .nav-link:hover {
     color: var(--couleur-secondaire) !important;
 
 }
 
+.nav-link.active {
+    color: var(--couleur-accentuation) !important;
+}
+
 /*section hero*/
-/*commit 4*/
 #hero p {
     font-size: 1.2rem;
     color: #555;
@@ -93,6 +117,8 @@ a {
     padding-left: 20px;
     margin-bottom: 30px;
 }
+
+/* Bouton principal hero */
 
 #hero .btn-primary {
     padding: 15px 40px;
@@ -103,6 +129,7 @@ a {
     transition: 0.3s;
 }
 
+/* Hover bouton hero */
 #hero .btn-primary:hover {
     background-color: #ff6b6b;
     transform: translateX(10px);
@@ -113,7 +140,7 @@ a {
     display: grid;
     /* 3 colonnes égales */
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 160px;
+    grid-auto-rows: minmax(160px, auto);
     gap: 20px;
 }
 
@@ -163,6 +190,7 @@ a {
     border-style: dashed;
 }
 
+/*Services*/
 #services .col-md-4 {
     padding: 30px;
     border: 1px solid transparent;
@@ -171,6 +199,8 @@ a {
 
     transition: all 0.4s ease-in-out;
 }
+
+/* Hover cartes services */
 
 #services .col-md-4:hover {
     /* soulève carte et agrandit */
@@ -182,23 +212,73 @@ a {
     cursor: pointer;
 }
 
+/* Titres services */
+
 #services h3 {
     color: #1a1a1a;
     font-weight: 700;
     margin-bottom: 15px;
 }
 
+/* Texte services */
 #services p {
     color: #666;
     font-size: 0.95rem;
 }
 
+/* Titres centrés globalement */
 .container h2 {
     text-align: center;
     padding-bottom: 25px;
 }
 
-/*commit 5*/
+/* --- SECTION HERO : IMAGE DE FOND --- */
+.hero-bg {
+    position: relative;
+    min-height: 85vh;
+    /* Couvre 85% de la hauteur de l'écran */
+    background-image: url('https://images.pexels.com/photos/7971165/pexels-photo-7971165.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    /* Évite que la navbar fixe ne cache le contenu */
+}
+
+/* Voile noir transparent pour garantir le contraste du texte */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Opacité ajustable à votre convenance */
+    z-index: 0;
+}
+
+/* --- ANIMATION DES CARTES AU SURVOL --- */
+.animated-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.animated-card:hover {
+    transform: translateY(-8px);
+    /* Fait légèrement monter la carte */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.12) !important;
+    /* Accentue l'ombre */
+    border-color: rgba(13, 110, 253, 0.3) !important;
+    /* Légère lueur aux contours (Primary) */
+}
+
+/* Gestion du contenu interne des cartes d'expertise */
+.service-card .card-body {
+    min-height: 220px;
+    /* Standardise la hauteur des cartes */
+}
+
+/*permet de garder les pages intacts sur différents appareils*/
 @media (min-width: 1200px) {
     #hero h1 {
         font-size: 4.5rem;
@@ -249,6 +329,7 @@ a {
     }
 }
 
+/*mode sombre */
 body.dark-mode {
     background-color: #121212;
     color: white;
@@ -268,12 +349,14 @@ body.dark-mode .navbar {
     transition: all 0.3s ease;
 }
 
+/*bar de navigation au scrolle*/
 .navbar-scrolled {
     background-color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px 40px;
 }
 
+/*bouton pour retourner en haut*/
 #backToTop {
     position: fixed;
     bottom: 20px;
@@ -289,20 +372,22 @@ body.dark-mode .navbar {
     display: block;
 }
 
+/* État initial : section invisible et décalée vers le bas, en attendant la détection JS */
+
 .fade-section {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease;
 }
 
+/* Appliqué par le JS quand la section entre dans le viewport : redevient visible et reprend sa position */
+
 .fade-section.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-body {
-    padding-top: 70px;
-}
+/* Décale le démarrage de chaque section pour créer un effet de cascade (apparition en escalier) */
 
 .fade-section:nth-child(1) {
     transition-delay: 0.1s;

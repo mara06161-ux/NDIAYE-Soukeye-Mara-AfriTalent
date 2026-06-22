@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // --- DARK MODE ---
     const btn = document.getElementById("themeToggle");
 
     if (btn) {
         const savedTheme = localStorage.getItem("theme");
 
+        // On remet le thème de la dernière visite
         if (savedTheme === "dark") {
             document.body.classList.add("dark-mode");
             btn.textContent = "☀️";
@@ -12,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.textContent = "🌙";
         }
 
+        // Switch au clic et sauvegarde du choix
         btn.addEventListener("click", () => {
             document.body.classList.toggle("dark-mode");
 
@@ -25,26 +28,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // --- NAVBAR EFFECT ---
     const navbar = document.querySelector(".navbar");
 
     if (navbar) {
+        // Change l'apparence de la navbar après 50px de scroll
         window.addEventListener("scroll", () => {
             navbar.classList.toggle("navbar-scrolled", window.scrollY > 50);
         });
     }
 
+    // --- BTN BACK TO TOP ---
     const backToTop = document.getElementById("backToTop");
 
     if (backToTop) {
+        // Affiche le bouton si on a scrollé de plus de 300px
         window.addEventListener("scroll", () => {
             backToTop.classList.toggle("show", window.scrollY > 300);
         });
 
+        // Retour fluide en haut de page
         backToTop.addEventListener("click", () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
     }
 
+    // --- ANIMATION APPARITION SECTIONS ---
     const sections = document.querySelectorAll(".fade-section");
 
     const fadeObserver = new IntersectionObserver((entries) => {
@@ -57,16 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(section => fadeObserver.observe(section));
 
+    // --- ANIMATION DES COMPTEURS ---
     const counters = document.querySelectorAll(".counter");
 
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const counter = entry.target;
-                const target = +counter.dataset.target;
+                const target = +counter.dataset.target; // + pour convertir en nombre
 
                 let current = 0;
-                const duration = 2000;
+                const duration = 2000; // 2 secondes d'animation
                 const stepTime = 16;
                 const increment = target / (duration / stepTime);
 
@@ -74,20 +84,22 @@ document.addEventListener("DOMContentLoaded", () => {
                     current += increment;
 
                     if (current >= target) {
-                        counter.textContent = target.toLocaleString("fr-FR");
+                        counter.textContent = target.toLocaleString("fr-FR"); // Format fr (ex: 1 500)
                         clearInterval(timer);
                     } else {
                         counter.textContent = Math.floor(current).toLocaleString("fr-FR");
                     }
                 }, stepTime);
 
-                counterObserver.unobserve(counter);
+                counterObserver.unobserve(counter); // Arrête l'observation de ce compteur une fois l'animation terminée, pour éviter de la relancer inutilement
+
             }
         });
     });
 
     counters.forEach(counter => counterObserver.observe(counter));
 
+    // --- VALIDATION FORMULAIRE ---
     const form = document.getElementById("contactForm");
     console.log("FORM =", form);
 
@@ -95,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const successBox = document.getElementById("formSuccess");
 
         form.addEventListener("submit", function (e) {
-            e.preventDefault();
+            e.preventDefault(); // Bloque l'envoi de la page
 
             const lastName = document.getElementById("lastName");
             const firstName = document.getElementById("firstName");
@@ -105,11 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let isValid = true;
 
+            // Reset des erreurs et des classes Bootstrap
             document.querySelectorAll(".invalid-feedback").forEach(el => el.textContent = "");
             form.querySelectorAll(".form-control, .form-select").forEach(el => {
                 el.classList.remove("is-invalid", "is-valid");
             });
 
+            // vérifie que le nom n'est pas vide ( champs obligatoire)
             if (lastName.value.trim() === "") {
                 document.getElementById("lastNameError").textContent = "Nom requis";
                 lastName.classList.add("is-invalid");
@@ -118,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 lastName.classList.add("is-valid");
             }
 
+            // vérifie que le Prénom est bien saisi
             if (firstName.value.trim() === "") {
                 document.getElementById("firstNameError").textContent = "Prénom requis";
                 firstName.classList.add("is-invalid");
@@ -126,6 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 firstName.classList.add("is-valid");
             }
 
+            // vérifie que l'Email est correctement écrit
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (email.value.trim() === "") {
                 document.getElementById("emailError").textContent = "Email requis";
@@ -139,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 email.classList.add("is-valid");
             }
 
+            // vérifie que le champs Sujet n'est pas vide
             if (subject.value === "") {
                 document.getElementById("subjectError").textContent = "Sujet obligatoire";
                 subject.classList.add("is-invalid");
@@ -147,6 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 subject.classList.add("is-valid");
             }
 
+            // vérifie que l'utilisateur a écrit au moins 20 caractères Message 
             if (message.value.trim().length < 20) {
                 document.getElementById("messageError").textContent = "Minimum 20 caractères";
                 message.classList.add("is-invalid");
@@ -155,6 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 message.classList.add("is-valid");
             }
 
+            // Si tout est OK, on affiche le succès et on reset le formulaire
             if (isValid) {
                 successBox.classList.remove("d-none");
                 successBox.textContent = "Message envoyé ✔";
@@ -167,5 +186,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 successBox.classList.add("d-none");
             }
         });
+    }
+    //Filtrage des Freelances par catégories
+    const filter = document.getElementById("categoryFilter");
+
+    if (filter) {
+        filter.addEventListener("change", () => {
+            const valeurChoisie = filter.value;
+            const cartes = document.querySelectorAll(".freelance-card");
+
+            cartes.forEach(carte => {
+                if (valeurChoisie === "all" || carte.dataset.category === valeurChoisie) {
+                    carte.style.display = "";
+                } else {
+                    carte.style.display = "none";
+                }
+            });
+        });
+    }
+    //Annee dynamique permet de changer automatiquement l'annee et de le mettre a jour
+    const yearElement = document.getElementById("current-year");
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
     }
 });

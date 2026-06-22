@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,12 @@
     <title>AfriTalent — À propos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
 
 <body>
+    <!-- Barre de navigation principale -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Afri<span class="talent">Talent</span></a>
@@ -24,13 +27,27 @@
                     <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
                     <li class="nav-item"><a class="nav-link active" href="about.html">A propos</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <button id="themeToggle">🌙</button>
-                    <button id="backToTop">↑</button>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="#" class="btn btn-primary text-white">Rejoindre AfriTalent</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="themeToggle" class="btn btn-sm btn-outline-light me-2"
+                            aria-label="Changer de thème"> 🌙 </button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="backToTop" class="btn btn-sm btn-primary text-white" aria-label="Retour en haut"> ↑
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- Contenu principal de la page À propos -->
     <main class="container py-5 ">
+        <!-- Présentation de l'entreprise et de sa mission -->
         <div class="row align-items-center ">
             <div class="col-12 col-md-6">
                 <h1 class="fw-bold mb-4">L'histoire d'AfriTalent</h1>
@@ -39,7 +56,7 @@
                     Nous avons créé cet espace pour que chaque développeur, designer ou marketeur africain puisse
                     collaborer sur des projets internationaux d'envergure.</p>
 
-                <h3 class="mt-4">Notre Mission</h3>
+                <h2 class="h3 mt-4">Notre Mission</h2>
                 <p>Réduire les barrières à l'entrée du marché du travail numérique et garantir un environnement de
                     confiance pour les clients et les freelances.</p>
 
@@ -51,18 +68,250 @@
             </div>
 
             <div class="col-12 col-md-6 mt-4 mt-md-0">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600"
+                <img src="https://images.pexels.com/photos/9490623/pexels-photo-9490623.jpeg"
                     class="img-fluid rounded shadow-lg" alt="L'équipe AfriTalent">
             </div>
         </div>
-    </main>
+        <div class="container">
+            <!--section présentant les membres de l'équipe-->
+            <h2 class="text-center mb-4">L'équipe</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <img src="https://plus.unsplash.com/premium_photo-1689551670902-19b441a6afde?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="card-img-top" alt="Portrait Margo Talamonti"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="h5 card-title">Margo Talamonti</h2>
+                            <p class="card-text text-muted mb-1"><strong>Poste :</strong> Fondatrice & CEO</p>
+                            <p class="card-text small">Gère le developpement de la stratégie globale de l'entreprise.
+                            </p>
 
-    <footer>
-        <div class="container py-4">
-            <p>&copy; 2025 AfriTalent. Tous droits reserves.</p>
+                            <div class="mt-2 d-flex gap-2">
+                                <a href="#" class="text-primary opacity-75" aria-label="LinkedIn"><i
+                                        class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-primary opacity-75" aria-label="X"><i
+                                        class="bi bi-twitter-x"></i></a>
+                                <a href="#" class="text-primary opacity-75" aria-label="Facebook"><i
+                                        class="bi bi-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <img src="https://plus.unsplash.com/premium_photo-1770480015835-bde7048248b0?q=80&w=1081&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="card-img-top" alt="Portrait Abdoul Fall" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="h5 card-title">Abdoul Fall</h2>
+                            <p class="card-text text-muted mb-1"><strong>Poste :</strong> Responsable Technique / CTO
+                            </p>
+                            <p class="card-text small"> Pilote l'architecture technique et supervise le développement de
+                                la
+                                plateforme.</p>
+
+                            <div class="mt-2 d-flex gap-2">
+                                <a href="#" class="text-primary opacity-75" aria-label="LinkedIn"><i
+                                        class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-primary opacity-75" aria-label="X"><i
+                                        class="bi bi-twitter-x"></i></a>
+                                <a href="#" class="text-primary opacity-75" aria-label="Facebook"><i
+                                        class="bi bi-facebook"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+
+                    <div class="card h-100">
+                        <img src="https://plus.unsplash.com/premium_photo-1758836220645-9d0373498f98?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="card-img-top" alt="Portrait Papa Drogba" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="h5 card-title">Papa Drogba</h2>
+                            <p class="card-text text-muted mb-1"><strong>Poste :</strong> Lead Designer UI/UX</p>
+                            <p class="card-text small">Conçoit les interfaces et garantit une expérience utilisateur
+                                fluide et accessible.</p>
+
+                            <div class="mt-2 d-flex gap-2">
+                                <a href="#" class="text-primary opacity-75" aria-label="LinkedIn"><i
+                                        class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-primary opacity-75" aria-label="X"><i
+                                        class="bi bi-twitter-x"></i></a>
+                                <a href="#" class="text-primary opacity-75" aria-label="Facebook"><i
+                                        class="bi bi-facebook"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+
+                    <div class="card h-100">
+                        <img src="https://plus.unsplash.com/premium_photo-1689977807477-a579eda91fa2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="card-img-top" alt="Portrait Roger Dicaprio"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="h5 card-title">Roger Dicaprio</h2>
+                            <p class="card-text text-muted mb-1"><strong>Poste :</strong> Responsable Marketing &
+                                Croissance
+                            </p>
+                            <p class="card-text small"> Développe la visibilité d'AfriTalent et pilote l'acquisition de
+                                nouveaux utilisateurs.</p>
+
+                            <div class="mt-2 d-flex gap-2">
+                                <a href="#" class="text-primary opacity-75" aria-label="LinkedIn"><i
+                                        class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-primary opacity-75" aria-label="X"><i
+                                        class="bi bi-twitter-x"></i></a>
+                                <a href="#" class="text-primary opacity-75" aria-label="Facebook"><i
+                                        class="bi bi-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Section présentant les valeurs fondamentales de l'entreprise-->
+            <h2 class="text-center mb-4">Nos valeurs</h2>
+            <div class="row ">
+                <div class="col-md-6 col-lg-3 text-center mb-4">
+                    <i class="bi bi-lightbulb fs-1 text-primary mb-3 d-block"></i>
+                    <h3 class="h5 fw-bold">Innovation</h3>
+                    <p class="text-muted small">Nous repoussons constamment les limites technologiques pour offrir les
+                        meilleures
+                        solutions à notre communauté.</p>
+                </div>
+
+                <div class="col-md-6 col-lg-3 text-center mb-4">
+                    <i class="bi bi-people-fill fs-1 text-primary mb-3 d-block"></i>
+                    <h3 class="h5 fw-bold">Communauté</h3>
+                    <p class="text-muted small">Nous créons des liens durables entre freelances et entreprises, fondés
+                        sur la
+                        confiance et l'entraide.</p>
+                </div>
+
+                <div class="col-md-6 col-lg-3 text-center mb-4">
+                    <i class="bi bi-award-fill fs-1 text-primary mb-3 d-block"></i>
+                    <h3 class="h5 fw-bold">Excellence</h3>
+                    <p class="text-muted small">Nous visons la plus haute qualité dans chaque mise en relation, chaque
+                        profil
+                        vérifié et chaque collaboration.</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center mb-4">
+                    <i class="bi bi-universal-access fs-1 text-primary mb-3 d-block"></i>
+                    <h3 class="h5 fw-bold">Accessibilité</h3>
+                    <p class="text-muted small">Nous rendons les opportunités tech accessibles à tous, partout en
+                        Afrique, sans
+                        barrière à l'entrée.</p>
+                </div>
+            </div>
+            <!--Section Bento Grid avec compteurs animés présentant les chiffres clés-->
+            <h2 class="text-center mb-4">Nos chiffres clés</h2>
+            <div class="bento-grid">
+                <div class="bento-item item-1">
+                    <h2 class="counter display-4 fw-bold" data-target="12000">0</h2>
+                    <p>Missions réalisées avec succès</p>
+                </div>
+                <div class="bento-item item-2">
+                    <h2 class="counter display-4 fw-bold" data-target="98">0<span>%</span></h2>
+                    <p>Taux de satisfaction client</p>
+                </div>
+                <div class="bento-item item-3">
+                    <h2 class="counter display-4 fw-bold" data-target="15">0</h2>
+                    <p>Pays africains couverts</p>
+                </div>
+                <div class="bento-item item-4">
+                    <h2 class="counter display-4 fw-bold" data-target="3">0<span>ans</span></h2>
+                    <p>D'expérience au service des talents africains</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Pied de page -->
+
+    <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary border-opacity-10">
+        <div class="container">
+            <div class="row gy-4 text-start align-items-start">
+
+                <div class="col-lg-4 col-md-6">
+                    <a class="h4 fw-bold text-primary text-decoration-none d-block mb-3"
+                        href="index.html">AfriTalent</a>
+                    <p class="text-white-50 small pe-lg-4">
+                        Valoriser l'excellence des métiers du numérique et propulser les talents africains sur la scène
+                        mondiale.
+                    </p>
+                    <div class="d-flex gap-3 fs-5 mt-4">
+                        <a href="#" class="link-light opacity-75 text-hover-primary" aria-label="LinkedIn"><i
+                                class="bi bi-linkedin"></i></a>
+                        <a href="#" class="link-light opacity-75 text-hover-primary" aria-label="X"><i
+                                class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="link-light opacity-75 text-hover-primary" aria-label="Facebook"><i
+                                class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h2 class="fw-bold text-uppercase tracking-wider text-white mb-3 small">Liens utiles</h2>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2.5"><a href="index.html"
+                                class="text-decoration-none link-light opacity-75 text-hover-primary">Accueil</a></li>
+                        <li class="mb-2.5"><a href="freelances.html"
+                                class="text-decoration-none link-light opacity-75 text-hover-primary">Trouver un
+                                profil</a></li>
+                        <li class="mb-2.5"><a href="tarifs.html"
+                                class="text-decoration-none link-light opacity-75 text-hover-primary">Grille des
+                                tarifs</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h2 class="fw-bold text-uppercase tracking-wider text-white mb-3 small">Ressources</h2>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2.5"><a href="blog.html"
+                                class="text-decoration-none link-light opacity-75 text-hover-primary">Notre Blog</a>
+                        </li>
+                        <li class="mb-2.5"><a href="about.html"
+                                class="text-decoration-none link-light opacity-75 text-hover-primary">À propos de
+                                nous</a></li>
+                        <li class="mb-2.5"><a href="#"
+                                class="text-decoration-none link-light opacity-75 text-hover-primary">FAQ & Aide</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h2 class="fw-bold text-uppercase tracking-wider text-white mb-3 small">Contact</h2>
+                    <ul class="list-unstyled small text-white-50 mb-0">
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="bi bi-geo-alt-fill text-primary mt-0.5 me-2.5"></i>
+                            <span>Dakar, Sénégal</span>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="bi bi-envelope-fill text-primary mt-0.5 me-2.5"></i>
+                            <a href="mailto:contact@afritalent.sn"
+                                class="text-decoration-none link-light opacity-75 text-hover-primary">contact@afritalent.sn</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <hr class="border-secondary opacity-20 my-4">
+
+            <!-- Liens de confidentialité centrés -->
+            <div class="text-center small text-white-50 mb-3">
+                <a href="#"
+                    class="link-light opacity-50 text-hover-primary text-decoration-none me-3">Confidentialité</a>
+                <a href="#" class="link-light opacity-50 text-hover-primary text-decoration-none">Mentions légales</a>
+            </div>
+
+            <!-- Copyright parfaitement centré tout en bas -->
+            <div class="text-center small text-white-50">
+                <p class="mb-0">&copy; <span id="current-year">2026</span> AfriTalent. Tous droits réservés.</p>
+            </div>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
